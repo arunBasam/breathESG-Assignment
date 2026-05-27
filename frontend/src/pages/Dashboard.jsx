@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+const API =
+import.meta.env.VITE_API_URL
+
 function Dashboard() {
 
 const [rows, setRows] = useState([]);
