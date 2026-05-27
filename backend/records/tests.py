@@ -2,6 +2,9 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 
 
+BASE = "/api/v1/records/"
+
+
 class RecordTests(TestCase):
 
     def setUp(self):
@@ -13,7 +16,7 @@ class RecordTests(TestCase):
 
         res = self.client.post(
 
-            "/api/records/",
+            BASE,
 
             {
                 "source": "SAP"
@@ -33,7 +36,7 @@ class RecordTests(TestCase):
 
         res = self.client.post(
 
-            "/api/records/",
+            BASE,
 
             {
                 "source": "ABC"
@@ -52,7 +55,9 @@ class RecordTests(TestCase):
     def test_stats(self):
 
         res = self.client.get(
-            "/api/records/stats/"
+
+            BASE + "stats/"
+
         )
 
         self.assertEqual(
@@ -64,7 +69,9 @@ class RecordTests(TestCase):
     def test_health(self):
 
         res = self.client.get(
-            "/api/records/health/"
+
+            BASE + "health/"
+
         )
 
         self.assertEqual(
@@ -76,7 +83,9 @@ class RecordTests(TestCase):
     def test_pagination(self):
 
         res = self.client.get(
-            "/api/records/list/?page=1"
+
+            BASE + "list/?page=1"
+
         )
 
         self.assertEqual(
@@ -88,7 +97,9 @@ class RecordTests(TestCase):
     def test_quality(self):
 
         res = self.client.get(
-            "/api/records/quality/"
+
+            BASE + "quality/"
+
         )
 
         self.assertEqual(
@@ -100,7 +111,9 @@ class RecordTests(TestCase):
     def test_audit_summary(self):
 
         res = self.client.get(
-            "/api/records/audit/summary/"
+
+            BASE + "audit/summary/"
+
         )
 
         self.assertEqual(
@@ -112,7 +125,9 @@ class RecordTests(TestCase):
     def test_audit_logs(self):
 
         res = self.client.get(
-            "/api/records/audit/"
+
+            BASE + "audit/"
+
         )
 
         self.assertEqual(
@@ -125,7 +140,7 @@ class RecordTests(TestCase):
 
         self.client.post(
 
-            "/api/records/",
+            BASE,
 
             {
                 "source": "TRAVEL"
@@ -136,7 +151,9 @@ class RecordTests(TestCase):
         )
 
         res = self.client.get(
-            "/api/records/1/history/"
+
+            BASE + "1/history/"
+
         )
 
         self.assertEqual(
@@ -149,7 +166,7 @@ class RecordTests(TestCase):
 
         self.client.post(
 
-            "/api/records/",
+            BASE,
 
             {
                 "source": "UTILITY"
@@ -160,7 +177,9 @@ class RecordTests(TestCase):
         )
 
         res = self.client.post(
-            "/api/records/1/reject/"
+
+            BASE + "1/reject/"
+
         )
 
         self.assertEqual(
