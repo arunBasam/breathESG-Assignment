@@ -1,0 +1,9 @@
+Tenant
+↓
+DataSource
+↓
+RawRecord
+↓
+NormalizedRecord
+↓
+AuditLog
