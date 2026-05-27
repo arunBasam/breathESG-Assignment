@@ -810,42 +810,42 @@ def api_docs(request):
         "records":{
 
             "upload":
-            "/api/records/",
+            "/api/v1/records/",
 
             "list":
-            "/api/records/list/?page=1",
+            "/api/v1/records/list/?page=1",
 
             "approve":
-            "/api/records/<id>/approve/",
+            "/api/v1/records/<id>/approve/",
 
             "reject":
-            "/api/records/<id>/reject/"
+            "/api/v1/records/<id>/reject/"
 
         },
 
         "analytics":{
 
             "stats":
-            "/api/records/stats/",
+            "/api/v1/records/stats/",
 
             "quality":
-            "/api/records/quality/",
+            "/api/v1/records/quality/",
 
             "health":
-            "/api/records/health/"
+            "/api/v1/records/health/"
 
         },
 
         "audit":{
 
             "logs":
-            "/api/records/audit/",
+            "/api/v1/records/audit/",
 
             "summary":
-            "/api/records/audit/summary/",
+            "/api/v1/records/audit/summary/",
 
             "history":
-            "/api/records/<id>/history/"
+            "/api/v1/records/<id>/history/"
 
         }
 
