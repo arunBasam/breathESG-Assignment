@@ -42,8 +42,8 @@ setLoading(true);
 
 const res =
 await axios.get(
-"http://127.0.0.1:8000/api/records/list/"
-);
+`${API}/records/list/`
+)
 
 setRows(
 
@@ -224,7 +224,7 @@ const approve = async(id)=>{
 try{
 
 await axios.post(
-`http://127.0.0.1:8000/api/records/${id}/approve/`
+`${API}/records/${id}/approve/`
 );
 
 toast.success(

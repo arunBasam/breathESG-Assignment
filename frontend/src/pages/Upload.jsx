@@ -8,7 +8,8 @@ const [source, setSource] = useState("SAP");
 const upload = async () => {
 
 await axios.post(
-"http://127.0.0.1:8000/api/records/",
+"${API}/records/"
+,
 {
 source
 }

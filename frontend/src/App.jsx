@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import Dashboard from "./pages/Dashboard";
 
+const API =
+import.meta.env.VITE_API_URL
+
 function App() {
 
 const [source, setSource] =
@@ -12,7 +15,8 @@ const upload = async () => {
 try {
 
 await axios.post(
-"http://127.0.0.1:8000/api/records/",
+`${API}/records/`
+,
 {
 source
 }
