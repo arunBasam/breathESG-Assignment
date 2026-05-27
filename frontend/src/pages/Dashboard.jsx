@@ -47,7 +47,7 @@ await axios.get(
 
 setRows(
 
-res.data.sort(
+res.data.data.sort(
 (a,b)=>b.id-a.id
 )
 
