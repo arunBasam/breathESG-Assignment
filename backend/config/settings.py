@@ -43,8 +43,13 @@ ALLOWED_HOSTS = [
 
 
 # CORS
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 
+CORS_ALLOWED_ORIGINS = [
+
+    "https://breath-esg-assignment-taupe.vercel.app",
+
+]
 
 # Installed apps
 INSTALLED_APPS = [
