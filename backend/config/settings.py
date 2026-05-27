@@ -43,11 +43,12 @@ ALLOWED_HOSTS = [
 
 
 # CORS
+# CORS
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
 
-    "https://breath-esg-assignment-taupe.vercel.app",
+    "https://breath-esg-assignment-fp3mcr6eh-aruns-projects-173933ec.vercel.app",
 
 ]
 
