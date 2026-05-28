@@ -66,39 +66,7 @@ def save_record(request):
 
 )   
     
-    existing = (
-
-DataSource.objects
-
-.filter(
-
-tenant=tenant,
-
-source_type=source
-
-)
-
-.order_by(
-"-uploaded_at"
-)
-
-.first()
-
-)
-    if existing:
-        return Response(
-
-{
-
-"error":
-
-"Source already uploaded for this tenant"
-
-},
-
-status=409
-
-)
+ 
 
 
 
