@@ -419,10 +419,7 @@ def reject_record(request, id):
     record.status = "REJECTED"
 
     record.save()
-    AuditLog.objects.create(
-    record=record,
-    action="REJECTED"
-)
+ 
 
     normalized = (
 
