@@ -1295,7 +1295,6 @@ r.suspicious
 <TD>
 
 {
-
 r.audit==="APPROVED"
 
 ?
@@ -1321,9 +1320,40 @@ marginTop:"4px"
 }}
 >
 
-{
-r.audit_time
-}
+{r.audit_time}
+
+</div>
+
+</div>
+
+:
+
+r.audit==="REJECTED"
+
+?
+
+<div>
+
+<div
+style={{
+fontWeight:"400",
+color:"#ef4444"
+}}
+>
+
+❌ Rejected
+
+</div>
+
+<div
+style={{
+fontSize:"12px",
+color:"#94a3b8",
+marginTop:"4px"
+}}
+>
+
+{r.audit_time}
 
 </div>
 
@@ -1332,7 +1362,6 @@ r.audit_time
 :
 
 "-"
-
 }
 
 </TD>
