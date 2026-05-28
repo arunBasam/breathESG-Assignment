@@ -249,6 +249,31 @@ toast.error(
 
 };
 
+const reject = async(id)=>{
+
+try{
+
+await axios.post(
+`${API}/records/${id}/reject/`
+);
+
+toast.success(
+"Record rejected"
+);
+
+await load();
+
+}
+
+catch {
+
+toast.error(
+"Reject failed"
+);
+
+}
+
+};
 
 
 const filteredRows =
@@ -1354,6 +1379,8 @@ r.status==="LOCKED"
 }
 
 </button>
+
+
 
 </TD>
 
