@@ -32,3 +32,12 @@ htmlcov/
 node_modules/
 dist/
 .env
+
+venv/
+backend/venv/
+node_modules/
+__pycache__/
+*.pyc
+.env
+db.sqlite3
+dist/
