@@ -1380,7 +1380,52 @@ r.status==="LOCKED"
 
 </button>
 
+<button
 
+disabled={
+r.status==="REJECTED"
+}
+
+onClick={() => {
+
+const ok =
+window.confirm(
+"Reject this record?"
+);
+
+if(ok){
+
+reject(
+r.id
+);
+
+}
+
+}}
+
+style={{
+
+marginLeft:"10px"
+
+}}
+
+>
+
+{
+
+r.status==="REJECTED"
+
+?
+
+"Rejected"
+
+:
+
+"Reject"
+
+}
+
+</button>
 
 </TD>
 
