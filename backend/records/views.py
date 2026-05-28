@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from audit.models import AuditLog
 
 from .models import (
     RawRecord,
@@ -801,6 +802,26 @@ def health(request):
         AuditLog.objects.count()
 
     })
+
+
+
+@api_view(["POST"])
+def reject_record(request, id):
+
+    record = RawRecord.objects.get(id=id)
+
+    record.status = "REJECTED"
+
+    record.save()
+
+    AuditLog.objects.create(
+        record=record,
+        action="REJECTED"
+    )
+
+    return Response(
+        {"message": "Rejected"}
+    )
 
 @api_view(["GET"])
 def api_docs(request):
