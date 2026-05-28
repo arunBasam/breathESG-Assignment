@@ -419,6 +419,10 @@ def reject_record(request, id):
     record.status = "REJECTED"
 
     record.save()
+    AuditLog.objects.create(
+    record=record,
+    action="REJECTED"
+)
 
     normalized = (
 
@@ -805,23 +809,7 @@ def health(request):
 
 
 
-@api_view(["POST"])
-def reject_record(request, id):
 
-    record = RawRecord.objects.get(id=id)
-
-    record.status = "REJECTED"
-
-    record.save()
-
-    AuditLog.objects.create(
-        record=record,
-        action="REJECTED"
-    )
-
-    return Response(
-        {"message": "Rejected"}
-    )
 
 @api_view(["GET"])
 def api_docs(request):

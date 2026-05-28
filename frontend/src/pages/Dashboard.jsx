@@ -1428,10 +1428,7 @@ r.status==="REJECTED"
 </button>
 
 </TD>
-AuditLog.objects.create(
-    record=record,
-    action="REJECTED"
-)
+
 </tr>
 
 ))
